@@ -1,0 +1,49 @@
+{
+  "bridge": "BRIDGE01",
+  "routing": {
+    "A_book": "best price across connected LPs, IOC limit at LP quote, up to 3 attempts on reject",
+    "order_timeout_ms": 1000,
+    "price_filters": "NONE",
+    "stale_quote_filter": "NONE"
+  },
+  "sessions": {
+    "LP_A": {
+      "heartbeat_interval_s": 10,
+      "md_depth": 2
+    },
+    "LP_B": {
+      "heartbeat_interval_s": 10,
+      "md_depth": 2
+    },
+    "LP_C": {
+      "heartbeat_interval_s": 10,
+      "md_depth": 2
+    }
+  },
+  "markups_pips_per_side": {
+    "STD": {
+      "EURUSD": 0.8,
+      "GBPUSD": 0.8,
+      "XAUUSD": 2.0
+    },
+    "RAW": {
+      "EURUSD": 0.0,
+      "GBPUSD": 0.0,
+      "XAUUSD": 0.0
+    }
+  },
+  "lp_quantity_multiplier": {
+    "LP_A:EURUSD": 100000,
+    "LP_A:GBPUSD": 100000,
+    "LP_A:XAUUSD": 100,
+    "LP_B:EURUSD": 100000,
+    "LP_B:GBPUSD": 100000,
+    "LP_B:XAUUSD": 100,
+    "LP_C:EURUSD": 100000,
+    "LP_C:GBPUSD": 100000,
+    "LP_C:XAUUSD": 1
+  },
+  "b_book_execution": {
+    "slippage_mode": "client_adverse_only"
+  }
+}

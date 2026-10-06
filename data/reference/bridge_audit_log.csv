@@ -1,0 +1,4 @@
+time,user,object,change,ticket
+2025-10-14 16:20:05.000,admin,LP_C session,lp_quantity_multiplier XAUUSD set to 1,CHG-2291 (new LP onboarding)
+2025-10-15 12:39:56.800,dealer2,Group STD / GBPUSD,markup 0.8 -> 8.0 pips,none
+2025-10-15 13:00:00.400,dealer1,Group STD / GBPUSD,markup 8.0 -> 0.8 pips,INC-5521 client complaints

@@ -1,0 +1,4 @@
+symbol,pip_size,digits,contract_size,lp_quantity_unit
+EURUSD,0.0001,5,100000,units
+GBPUSD,0.0001,5,100000,units
+XAUUSD,0.1,2,100,ounces

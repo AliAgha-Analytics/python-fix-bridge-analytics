@@ -48,6 +48,8 @@ flowchart LR
 | 07 | [Three-way reconciliation](lessons/07_reconciliation.ipynb) | Advanced | platform ↔ bridge ↔ LP statement on ExecID, **duplicates, missing fills, quantity breaks**, position recon, break register |
 | 08 | [Monitoring & incident playbook](lessons/08_monitoring_playbook.ipynb) | Advanced (capstone) | 17 alert rules, incident grouping, **detection delay scoring (12/12 caught)**, alert correlation, **playbook** |
 
+📖 **New to this?** Read the [Lesson Guide](lessons/LESSON_GUIDE.md) alongside the notebooks: it explains every section in plain words and how the same task is done on a real dealing desk.
+
 All notebooks are saved **with their outputs and charts**, so they read like reports on GitHub without running anything.
 
 ---

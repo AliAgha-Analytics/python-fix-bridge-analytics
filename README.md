@@ -131,4 +131,4 @@ python-fix-bridge-analytics/
 ---
 
 **Tools:** Python · pandas · NumPy · Matplotlib · Jupyter · FIX 4.4
-**Author:** Ali Agha · [LinkedIn](https://www.linkedin.com/in/ali-agha-a068551b5) · [GitHub](https://github.com/AliAgha-Analytics)
+

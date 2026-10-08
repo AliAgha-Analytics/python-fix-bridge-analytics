@@ -2,6 +2,10 @@
 
 **Level:** beginner · **No code**. Read this first; every later lesson builds on these ideas.
 
+> Every lesson repeats the meaning of each FIX tag and term where it's used, so you never need to memorise anything.
+> There's also a plain-words companion, the [Lesson Guide](LESSON_GUIDE.md), and a cheat sheet with 10 worked FIX
+> examples at the end of [Lesson 01](01_reading_fix_messages.ipynb).
+
 ---
 
 ## 1. The players
@@ -87,6 +91,13 @@ FIX (Financial Information eXchange) is the standard protocol between bridges an
 8=FIX.4.4|9=148|35=D|49=BRIDGE01|56=LP_B|34=7|52=20251015-11:30:45.773|11=BR700009-1|55=XAUUSD|54=2|38=538|40=2|44=4086.27|59=3|10=228|
 ```
 
+**The same message in plain English:** `35=D` (MsgType = NewOrderSingle, "a new order") from `49=BRIDGE01` (our
+bridge) to `56=LP_B`; it's message number `34=7` of the day on this connection, sent at `52=…11:30:45.773`. The order:
+`11=BR700009-1` (our reference: client order 700009, 1st attempt), `55=XAUUSD` (gold), `54=2` (Side = Sell),
+`38=538` (quantity: 538 ounces), `40=2` (OrdType = Limit: only at this price or better), `44=4086.27` (the limit price),
+`59=3` (TimeInForce = IOC, Immediate Or Cancel: fill now or cancel). `9=148` and `10=228` are control numbers (length and
+checksum) that prove the message wasn't damaged. Lesson 01 explains all of this step by step.
+
 | Part | Tags | Meaning |
 |---|---|---|
 | Header | 8 BeginString, 9 BodyLength, 35 MsgType, 49 Sender, 56 Target, 34 MsgSeqNum, 52 SendingTime | Who, what, when, and the sequence number |
@@ -94,8 +105,8 @@ FIX (Financial Information eXchange) is the standard protocol between bridges an
 | Trailer | 10 CheckSum | Integrity check |
 
 **Two layers:**
-- **Session layer:** keeps the connection healthy. Logon (A), Heartbeat (0), TestRequest (1), ResendRequest (2), SequenceReset (4), Logout (5) and sequence numbers.
-- **Application layer:** the business. MarketDataRequest (V), MarketDataSnapshot (W), NewOrderSingle (D), ExecutionReport (8).
+- **Session layer:** keeps the connection healthy. Logon (A, "hello"), Heartbeat (0, "I'm still here"), TestRequest (1, "are you there?"), ResendRequest (2, "send me the messages I missed"), SequenceReset (4, "skip these message numbers"), Logout (5, "goodbye"), and the message numbers (tag 34) that let each side spot a lost message.
+- **Application layer:** the business. MarketDataRequest (V, "send me prices"), MarketDataSnapshot (W, "here are my prices"), NewOrderSingle (D, "here's an order"), ExecutionReport (8, "here's what happened to your order").
 
 Lessons 01 and 02 teach you to read both by hand.
 

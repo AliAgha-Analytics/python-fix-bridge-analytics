@@ -58,7 +58,7 @@ All notebooks are saved **with their outputs and charts**, so they read like rep
 
 | # | Incident | Found in | What the data shows |
 |---|---|---|---|
-| S01 | LP_C sends a **bad EURUSD tick** 50 pips off market | 04, 08 | a B-book client bought 20 lots on it within ~90 ms: **≈ $10k loss** to the broker; the A-book attempt was rejected by LP_C and re-routed |
+| S01 | LP_C sends a **bad EURUSD tick** 50 pips off market | 04, 08 | a B-book client bought 20 lots on it about 120 ms later: **≈ $10k loss** to the broker; the A-book attempt was rejected by LP_C and re-routed |
 | S02 | LP_B **gold feed freezes for 90 s** while gold rallies | 03, 04, 08 | crossed book for 85 s; **23 B-book fills at the stale price, ≈ $32k**; detected in < 6 s by a per-symbol freeze rule |
 | S03 | **News at 12:30** | 03, 06 | price +20 pips in 2 s, spreads 4–5×, top-of-book size −65%, quote rate 4×, **bridge processing 1 → 160 ms** |
 | S04 | **Fat-finger markup** (GBPUSD STD 8.0 instead of 0.8 pips) | 06, 08 | found in the audit log; **26 trades / 21 clients overcharged ≈ $3.7k**, a refund list |
@@ -131,4 +131,4 @@ python-fix-bridge-analytics/
 ---
 
 **Tools:** Python · pandas · NumPy · Matplotlib · Jupyter · FIX 4.4
-
+**Author:** Ali Agha · [LinkedIn](https://www.linkedin.com/in/ali-agha-a068551b5) · [GitHub](https://github.com/AliAgha-Analytics)
